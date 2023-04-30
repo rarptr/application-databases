@@ -108,7 +108,7 @@ SELECT model,
        ROUND((amount * price), 2) AS "Общая сумма"
 FROM `Storage`.`Laptop`
 WHERE model LIKE '%Pro%'
-  OR model LIKE '%Air%'
+   OR model LIKE '%Air%'
 ORDER BY model DESC;
 
 -- Вариант 2
