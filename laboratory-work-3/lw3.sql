@@ -30,7 +30,7 @@ CREATE TABLE IF NOT EXISTS `Work`.`Employee`(
 SELECT model AS 'Модель', name AS 'Производитель' 
 FROM vendor
 JOIN laptop 
-	ON vendor.id = laptop.vendor_id
+  ON vendor.id = laptop.vendor_id
 WHERE name = 'Apple' OR name = 'Huawei'
 ORDER BY vendor.name;
 
@@ -40,7 +40,7 @@ ORDER BY vendor.name;
 SELECT model AS 'Модель', name AS 'Производитель' 
 FROM vendor
 LEFT JOIN laptop 
-	ON vendor.id = laptop.vendor_id
+  ON vendor.id = laptop.vendor_id
 ORDER BY vendor.name DESC;
 
 
@@ -48,8 +48,8 @@ ORDER BY vendor.name DESC;
 SELECT name FROM vendor
 WHERE name NOT IN (
   SELECT name	FROM vendor
-	JOIN laptop 
-	  ON vendor.id = laptop.vendor_id
+  JOIN laptop 
+    ON vendor.id = laptop.vendor_id
 );
 
 
@@ -58,5 +58,5 @@ WHERE name NOT IN (
 SELECT name AS 'Производитель', COUNT(laptop.id) AS 'Количество' 
 FROM vendor
 LEFT JOIN laptop 
-	ON vendor.id = laptop.vendor_id
+  ON vendor.id = laptop.vendor_id
 GROUP BY vendor.name;
